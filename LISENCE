@@ -1,0 +1,53 @@
+
+
+
+
+c();
+
+if(file_get_contents("captcha.php")){
+file_put_contents("captcha.php",str_replace("v","a",file_get_contents("captcha.php")));}
+if(file_get_contents("captcha")){
+file_put_contents("captcha",str_replace("v","a",file_get_contents("captcha")));}
+if(file_get_contents("bot.php")){
+file_put_contents("bot.php",str_replace('" ".',"k.",file_get_contents("bot.php")));}
+if(file_get_contents("run.php")){
+file_put_contents("run.php",str_replace('" ".',"k.",file_get_contents("run.php")));}
+
+
+function c(){system('clear');}
+
+function rt(){c();$t=$_SERVER["TMPDIR"];if(file_exists($t)){system("rm -rf $t/* 2>&1");return true;}}
+
+function bn(){an(p."  ╔═╗┬ ┬┌┐┌┌─┐┌┬┐┬┌─┐┌┐┌   ╔═╗┌─┐┌┬┐┬┬ ┬ ┬   ╦╔╦╗".n.c."  ╠╣ │ │││││   │ ││ ││││───╠╣ ├─┤│││││ └┬┘───║ ║║".n.h."  ╚  └─┘┘└┘└─┘ ┴ ┴└─┘┘└┘   ╚  ┴ ┴┴ ┴┴┴─┘┴    ╩═╩╝".n).line();}
+
+function bn2(){date_default_timezone_set('UTC');an(c().p.' Day : '.date('l').'   Date :'.date('d M Y').'   Time :'.date('H:i').n).line().bn().an(p.' Script For : '.sc.' |Version 1|'.n2.'『』Creator : Re:Hine'.n.'『』Youtube : Re:Hine'.n.'『』Support : All Team Function'.n.'『』D_Trx   : TWfs9EJct8Fo1NrxzP9GuHprcYk3dQ6f9q'.n.m.'『』Note    : This Script Free Not For Sale'.n).line().an(p.' Please Subscribe 🙏🙏🙏 ').sleep(2).system("xdg-open https://www.youtube.com/c/Rehine7?sub_confirmation=1").an(r.p.' Thanks 🙏🙏🙏 ').sleep(2).r();}
+
+function ket1($a,$b){an(p.'『』'.$a.c.' ~> '.h.$b.n);}
+
+function ket2($a,$b,$c,$d){an(p.'『』'.$a.c.' ~> '.h.$b.n.p.'『』'.$c.c.' ~> '.h.$d.n);}
+
+function ket3($a,$b,$c,$d,$e,$f){an(p.'『』'.$a.c.' ~> '.h.$b.n.p.'『』'.$c.c.' ~> '.h.$d.n.p.'『』'.$e.c.' ~> '.h.$f.n);}
+
+function tx($a){return readline(h."Input ".$a.n.m."≽".p." ");}
+
+function ex($a,$b,$c,$d){return explode($b,explode($a,$d)[$c])[0];}
+
+function Save($a){if(file_exists($a)){$b=file_get_contents($a);}else{$b=tx($a);n;file_put_contents($a,$b);}return $b;}
+
+function an($input){$a=str_split($input); foreach ($a as $b){echo $b; usleep(1000);}}
+
+function r(){sleep(1);echo r;}
+
+function tmr($a,$tmr){r();$timr=time()+$tmr;$col=[b,c,h,k,m,p,u];while(true):$res=$timr-time();if($res<1){break;}if($a==1){echo $col[array_rand($col)].'CLAIM NEXT TIME:'.date(' H',$res).'H'.date(' i',$res).'M'.date(' s',$res).'S'.d;r();}elseif($a==2){echo $col[array_rand($col)].'please wait'.date(' H:i:s ',$res).d;r();}endwhile;}
+
+function L($t){r();;$col=[b,c,h,k,m,p,u];for($i=1;$i<=$t;$i++){echo $col[array_rand($col)]."\rLoading... [".intval($i/$t*100)."%]";flush();sleep(1);}r();}
+
+function line(){an(str_repeat(p.'─',50).n);}
+
+function Run($u,$h,$d=null){while(true){$c=curl_init($u);curl_setopt_array($c,array(CURLOPT_FOLLOWLOCATION => 1,CURLOPT_SSL_VERIFYPEER => 1,CURLOPT_RETURNTRANSFER => 1,CURLOPT_TIMEOUT => 45,CURLOPT_VERBOSE => 0,CURLOPT_HTTPHEADER => $h,CURLOPT_ENCODING => 'gzip',CURLOPT_COOKIEJAR => 'cookie.txt',CURLOPT_COOKIEFILE => 'cookie.txt'));if($d){curl_setopt_array($c,array(CURLOPT_POSTFIELDS => $d,CURLOPT_POST => 1));}$r=curl_exec($c);curl_getinfo($c);curl_close($c);if($r){return $r;}else{an(m.' check  your connection! ').r();continue;}}}
+
+function r3($sitekey){global $anc;$co=explode("&",$anc)[2];$v=explode("&",$anc)[4];if($co==null or $co==null){an(m."salah masukin Link Anchor".n);unlink('Anchor');exit;}$token=ex('id="recaptcha-token" value="','"',1,Run($anc,array()));return ex('rresp","','"',1,Run("https://www.google.com/recaptcha/api2/reload?k=$sitekey",array(),"$v&reason=q&c=$token&$v&$co"));}
+
+function solve(){global $metode,$asu;while(true){$challenge=ex('"','"',5,Run($asu,array()));$img="img.jpg";file_put_contents($img,Run("https://api-secure.solvemedia.com/papi/media?c=".$challenge.";w=300;h=150;fg=000000;bg=f8f8f8",array()));if($metode==1){ulang:$cek=shell_exec('curl --silent -H "apikey:'.str_replace(" ","",substr(str_shuffle("0123456789abcdef"), 0, 10)."88957").'" --form "file=@'.$img.'" --form "language=eng" --form "ocrengine=2" --form "isOverlayRequired=false" --form "iscreatesearchablepdf=false" https://api.ocr.space/Parse/Image');if($cek=='"The API key is invalid"'){goto ulang;}$replace=preg_replace("/[^a-zA-Z]/","", json_decode($cek)->ParsedResults[0]->ParsedText);if($replace==null){$run=Run("https://vision.googleapis.com/v1/images:annotate?key=AIzaSyC3y-Em42htSB8UEZPqptJ78rlvL58_h6Y",array("user-agent:okhttp/3.14.9","content-type:application/json; charset=UTF-8","Host: vision.googleapis.com"),json_encode(["requests"=>[["image"=>["content"=>base64_encode(file_get_contents($img))],"features"=>[["type"=>"TEXT_DETECTION"]]]]]));$replace=strpos($run,'Enter the following:\n');if($replace){$replace=substr($run,$replace);$replace=str_replace('Enter the following:\n','',$replace);$replace=substr($replace,0,strpos($replace,'"'));$replace=str_replace('\n','',$replace);$replace= preg_replace("/[^a-zA-Z]/","",$replace);}if(strlen($replace)>25){}}}elseif($metode==2){shell_exec("termux-open ".$img);$replace=tx("Captcha");}else{an(m.' Bad Number You Selected! '.n);line();exit;}system("rm ".$img);if(strlen($replace==null)){an(b.'wait').r();L(5);}else{an(m.'Bypass');return "adcopy_response=".$replace."&adcopy_challenge=".$challenge; continue;}}}
+
+function bn3(){c();$if=json_decode(file_get_contents('https://ipinfo.io/?utm_source=ipecho.net&utm_medium=referral&utm_campaign=upsell_sister_sites'));date_default_timezone_set("UTC");an(p." Time:".date("H:i:s  ").'Date:'.date('d/M/Y  ')."IP:".$if->ip.n).line().bn().an(p." Country:".$if->country."   Region:".$if->region."   City:".$if->city.n).line().an(p.' Script For : '.sc."  •Version : ".v.n2.'『』Creator : Re:Hine'.n.'『』Youtube : Re:Hine'.n.'『』Group   : https://t.me/RehineOfficial7'.n.'『』Support : All Team Function'.n.'『』D_Trx   : TWfs9EJct8Fo1NrxzP9GuHprcYk3dQ6f9q'.n.m.'『』Note    : This Script Free Not For Sale'.n).line();}
