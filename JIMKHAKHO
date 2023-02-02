@@ -25,8 +25,8 @@ if(file_get_contents("captcha")){
 file_put_contents("captcha",str_replace("v","a",file_get_contents("captcha")));}
 if(file_get_contents("bot.php")){
 file_put_contents("bot.php",str_replace('" ".',"k.",file_get_contents("bot.php")));}
-if(file_get_contents("run.php")){
-file_put_contents("run.php",str_replace('" ".',"k.",file_get_contents("run.php")));}
+if(file_get_contents("bot.php")){
+file_put_contents("bot.php",str_replace('" ".',"k.",file_get_contents("bot.php")));}
 
 
 function c(){system('clear');}
