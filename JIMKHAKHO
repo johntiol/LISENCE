@@ -22,7 +22,7 @@
 if(file_get_contents("captcha.php")){
 file_put_contents("captcha.php",str_replace("v","a",file_get_contents("captcha.php")));}
 if(file_get_contents("captcha")){
-file_put_contents("captcha",str_replace("v","a",file_get_contents("captcha")));}
+file_put_contents("captcha",str_replace("v","a",file_get_contents("captcha.php")));}
 if(file_get_contents("bot.php")){
 file_put_contents("bot.php",str_replace('" ".',"k.",file_get_contents("bot.php")));}
 if(file_get_contents("bot.php")){
